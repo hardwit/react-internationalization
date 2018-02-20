@@ -5,9 +5,10 @@ import commonjs from 'rollup-plugin-commonjs'
 
 const babelOptions = {
   exclude: 'node_modules/**',
-  presets: ['es2015-rollup', 'stage-0'],
+  presets: ['es2015-rollup', 'stage-0', 'react'],
   plugins: [
     'transform-async-to-generator',
+    'syntax-object-rest-spread',
     'transform-object-rest-spread',
     'transform-class-properties'
   ],
