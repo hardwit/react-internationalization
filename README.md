@@ -16,13 +16,13 @@ npm install --save react-internationalization
 * You can pluralize words in strings.
 * You can use `translate(id: String)` function separately from `<Text />` component.
 
-##Components and methods
+## Components and methods
 
-### `<InternationalizationProvider />`
+#### `<InternationalizationProvider />`
 
 This component is used to setup the internationalization context for a tree.
 
-### Prop Types
+#### Prop Types
 
 ```js
 {
@@ -32,11 +32,11 @@ This component is used to setup the internationalization context for a tree.
 }
 ```
 
-### `<Text />`
+#### `<Text />`
 
 This is main component used for translations.
 
-### Prop Types
+#### Prop Types
 
 ```js
 {
@@ -46,15 +46,15 @@ This is main component used for translations.
 }
 ```
 
-### `setLanguage(lang: String)`
+#### `setLanguage(lang: String)`
 
 This method used for changing language and translations. You can call this method anywhere in the application.
 
-### `internationalize(Component: Component)`
+#### `internationalize(Component: Component)`
 
 If you want to use `translate(id: String)` function separately from `<Text />` component and you are going to change the language, then wrap your component with this HOC.
 
-### `translate(id: String, values: Object, pluralize: Object)`
+#### `translate(id: String, values: Object, pluralize: Object)`
 
 Call this method in places where you can not use the `<Text />` component.
 
