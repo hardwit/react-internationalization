@@ -1,6 +1,6 @@
 {
   "name": "react-internationalization",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "keywords": [
     "internationalization",
     "translation",
@@ -13,7 +13,12 @@
   "module": "./lib/index.es.js",
   "jsnext:main": "./lib/index.es.js",
   "peerDependencies": {
-    "react": ">= 15.0.0"
+    "react": ">= 15.0.0",
+    "prop-types": "^15.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hardwit/react-internationalization.git"
   },
   "scripts": {
     "build:lib": "rollup -c rollup.config.js"
@@ -21,7 +26,6 @@
   "author": "hardwit",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
