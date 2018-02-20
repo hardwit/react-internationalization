@@ -1,0 +1,47 @@
+{
+  "name": "react-internationalization",
+  "version": "1.0.0",
+  "keywords": [
+    "internationalization",
+    "translation",
+    "localization",
+    "react",
+    "reactjs"
+  ],
+  "description": "Internationalize React apps",
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "jsnext:main": "./lib/index.es.js",
+  "peerDependencies": {
+    "react": ">= 15.0.0"
+  },
+  "scripts": {
+    "build:lib": "rollup -c rollup.config.js"
+  },
+  "author": "hardwit",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.18.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-react": "^7.6.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
