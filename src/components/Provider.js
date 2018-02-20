@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { PropTypes } from 'prop-types'
 import { internationalize } from './../internationalize'
 
-class InternationalizeProvider extends Component {
+class InternationalizationProvider extends Component {
   static propTypes = {
     defaultLanguage: PropTypes.string.isRequired,
     languages: PropTypes.object.isRequired,
@@ -63,4 +63,4 @@ class InternationalizeProvider extends Component {
   }
 }
 
-export { InternationalizeProvider }
+export { InternationalizationProvider }

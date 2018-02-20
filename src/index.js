@@ -1,5 +1,12 @@
 import { translate, setLanguage } from './internationalize'
-import { InternationalizeProvider } from './components/Provider'
+import { InternationalizationProvider } from './components/Provider'
 import { Text } from './components/Text'
+import { connect } from './connect'
 
-export { setLanguage, translate, InternationalizeProvider, Text }
+export {
+  setLanguage,
+  translate,
+  InternationalizationProvider,
+  Text,
+  connect as internationalize
+}
