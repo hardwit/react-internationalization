@@ -76,17 +76,13 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <InternationalizationProvider
-    defaultLanguage={navigator.language}
-    languages={languages}
-  >
+  <InternationalizationProvider defaultLanguage="en" languages={languages}>
     <App />
   </InternationalizationProvider>,
   document.getElementById('root')
-)
 ```
 
-This example would render: "Hello Ivan, you have 4 new messages." into the root element on the page.
+This example would render: "Hello Ivan, you have 4 new messages!" into the root element on the page.
 
 ### Advanced Example
 
