@@ -46,7 +46,7 @@ app.js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { InternationalizationProvider, Text } from 'react-internationalization'
-import * as languages from './app/translations'
+import * as languages from './translations'
 
 class App extends Component {
   state = {
@@ -148,7 +148,7 @@ import {
   translate,
   internationalize
 } from 'react-internationalization'
-import * as languages from './app/translations'
+import * as languages from './translations'
 
 class App extends Component {
   state = {
