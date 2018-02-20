@@ -22,7 +22,7 @@ npm install --save react-internationalization
 
 This component is used to setup the internationalization context for a tree.
 
-#### Prop Types
+##### Prop Types
 
 ```js
 {
@@ -36,7 +36,7 @@ This component is used to setup the internationalization context for a tree.
 
 This is main component used for translations.
 
-#### Prop Types
+##### Prop Types
 
 ```js
 {
