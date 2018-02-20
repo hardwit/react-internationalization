@@ -1,22 +1,64 @@
 # React Internationalization
 
-Simple internationalization of React apps
+Simple internationalization of React apps.
 
 ![Gif](https://github.com/hardwit/react-internationalization/raw/master/example.gif)
 
-### Installation
+## Installation
 
 ```
 npm install --save react-internationalization
 ```
 
-### Features
+## Features
 
 * You can import languages dynamically.
 * You can pluralize words in strings.
 * You can use `translate(id: String)` function separately from `<Text />` component.
 
-### Simple Example
+##Components and methods
+
+### `<InternationalizationProvider />`
+
+This component is used to setup the internationalization context for a tree.
+
+### Prop Types
+
+```js
+{
+  defaultLanguage: string.isRequired,
+  languages: object.isRequired,
+  dynamicImports: bool
+}
+```
+
+### `<Text />`
+
+This is main component used for translations.
+
+### Prop Types
+
+```js
+{
+  id: PropTypes.string.isRequired,
+  values: PropTypes.object,
+  pluralize: PropTypes.object
+}
+```
+
+### `setLanguage(lang: String)`
+
+This method used for changing language and translations. You can call this method anywhere in the application.
+
+### `internationalize(Component: Component)`
+
+If you want to use `translate(id: String)` function separately from `<Text />` component and you are going to change the language, then wrap your component with this HOC.
+
+### `translate(id: String, values: Object, pluralize: Object)`
+
+Call this method in places where you can not use the `<Text />` component.
+
+## Simple Example
 
 translations/en.js
 
@@ -84,7 +126,7 @@ ReactDOM.render(
 
 This example would render: "Hello Ivan, you have 4 new messages!" into the root element on the page.
 
-### Advanced Example
+## Advanced Example
 
 translations/en.js
 

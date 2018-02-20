@@ -9,11 +9,13 @@ class Text extends Component {
 
   static propTypes = {
     id: PropTypes.string.isRequired,
-    values: PropTypes.object
+    values: PropTypes.object,
+    pluralize: PropTypes.object
   }
 
   static defaultProps = {
     values: {},
+    pluralize: {},
     id: ''
   }
 
@@ -34,11 +36,9 @@ class Text extends Component {
   }
 
   render() {
-    const { id, children, pluralize } = this.props
+    const { id, children, values, pluralize } = this.props
 
-    return id
-      ? this.context.translate(this.props.id, this.props.values, pluralize)
-      : children
+    return id ? this.context.translate(id, values, pluralize) : children
   }
 }
 
