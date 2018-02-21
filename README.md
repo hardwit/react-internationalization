@@ -64,7 +64,7 @@ This method used for adding your pluralization rules.
 
 ## Pluralization
 
-Pluralization rules for 'en' are used by default. If you have more than `one` and `other` in your language, then you can add your own pluralization rules. Check out the official [Unicode CLDR documentation](http://www.unicode.org/cldr/charts/28/supplemental/language_plural_rules.html) for your language.
+Pluralization rules for `en` are used by default. If you have more than `one` and `other` in your language, then you can add your own pluralization rules. Check out the official [Unicode CLDR documentation](http://www.unicode.org/cldr/charts/28/supplemental/language_plural_rules.html) for your language.
 
 ```js
 // example with 'ru' pluralization rules
