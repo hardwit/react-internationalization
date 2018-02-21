@@ -14,7 +14,7 @@ npm install --save react-internationalization
 
 * You can import languages dynamically.
 * You can pluralize words in strings.
-* You can use `translate(id: String)` function separately from `<Text />` component.
+* You can use `translate()` outside the React component.
 
 ## Components and methods
 
@@ -26,9 +26,9 @@ This component is used to setup the internationalization context for a tree.
 
 ```js
 {
-  defaultLanguage: string.isRequired,
-  languages: object.isRequired,
-  dynamicImports: bool
+  defaultLanguage: PropTypes.string.isRequired,
+  languages: PropTypes.object.isRequired,
+  dynamicImports: PropTypes.bool
 }
 ```
 
