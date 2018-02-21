@@ -58,6 +58,32 @@ If you want to use `translate(id: String)` function separately from `<Text />` c
 
 Call this method in places where you can not use the `<Text />` component.
 
+#### `addPluralizationRules(language: String, rules: Object)`
+
+This method used for adding your pluralization rules.
+
+## Pluralization
+
+Pluralization rules for 'en' are used by default. If you have more than `one` and `other` in your language, then you can add your own pluralization rules. Check out the official [Unicode CLDR documentation](http://www.unicode.org/cldr/charts/28/supplemental/language_plural_rules.html) for your language.
+
+```js
+// example with 'ru' pluralization rules
+
+import { addPluralizationRules } from 'react-internationalization'
+
+const rules = {
+  one: count => count % 10 === 1 && count % 100 !== 11,
+  few: count =>
+    [2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100),
+  many: count =>
+    count % 10 === 0 ||
+    [5, 6, 7, 8, 9].includes(count % 10) ||
+    [11, 12, 13, 14].includes(count % 100)
+}
+
+addPluralizationRules('ru', rules)
+```
+
 ## Simple Example
 
 translations/en.js

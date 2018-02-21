@@ -1,9 +1,11 @@
-import { pluralize } from './pluralize'
+import { pluralize, rules } from './pluralize'
 
 class Internationalize {
   translations = {}
   languageChangeListeners = []
   languageSettingListeners = []
+  pluralizationRules = rules
+  language = navigator.language
 
   translate = (key, values, pluralizeValues) => {
     try {
@@ -19,12 +21,20 @@ class Internationalize {
       )
 
       if (typeof res !== 'string') {
-        console.error(`Translation "${key}" must be a string`)
+        console.error(
+          `react-internationalization: Translation "${key}" must be a string`
+        )
 
         return key
       } else {
         return this.parseValue(
-          pluralize(res, pluralizeValues, this.language),
+          pluralize(
+            this.pluralizationRules,
+            this.language,
+            res,
+            pluralizeValues,
+            this.language
+          ),
           values
         )
       }
@@ -63,12 +73,12 @@ class Internationalize {
     this.languageChangeListeners.forEach(listener => listener())
   }
 
+  addPluralizationRules = (language, rules) => {
+    this.pluralizationRules[language] = rules
+  }
+
   addLanguageChangeListener = callback => {
     try {
-      if (typeof callback !== 'function') {
-        throw new Error('Language change callback must be a function')
-      }
-
       this.languageChangeListeners.push(callback)
 
       return () =>
@@ -77,16 +87,12 @@ class Internationalize {
           1
         )
     } catch (error) {
-      console.error('Internationalize error. ', error)
+      console.error('react-internationalization: ', error)
     }
   }
 
   addLanguageSettingListener = callback => {
     try {
-      if (typeof callback !== 'function') {
-        throw new Error('Language change callback must be a function')
-      }
-
       this.languageSettingListeners.push(callback)
 
       return () =>
@@ -95,7 +101,7 @@ class Internationalize {
           1
         )
     } catch (error) {
-      console.error('Internationalize error. ', error)
+      console.error('react-internationalization: ', error)
     }
   }
 
@@ -108,5 +114,6 @@ class Internationalize {
 const internationalize = new Internationalize()
 const translate = internationalize.translate
 const setLanguage = internationalize.setLanguage
+const addPluralizationRules = internationalize.addPluralizationRules
 
-export { internationalize, translate, setLanguage }
+export { internationalize, translate, setLanguage, addPluralizationRules }

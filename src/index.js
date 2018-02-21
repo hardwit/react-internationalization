@@ -1,4 +1,8 @@
-import { translate, setLanguage } from './internationalize'
+import {
+  translate,
+  setLanguage,
+  addPluralizationRules
+} from './internationalize'
 import { InternationalizationProvider } from './components/Provider'
 import { Text } from './components/Text'
 import { connect } from './connect'
@@ -8,5 +12,6 @@ export {
   translate,
   InternationalizationProvider,
   Text,
-  connect as internationalize
+  connect as internationalize,
+  addPluralizationRules
 }

@@ -38,7 +38,7 @@ class Text extends Component {
   render() {
     const { id, children, values, pluralize } = this.props
 
-    return id ? this.context.translate(id, values, pluralize) : children
+    return id ? this.context.translate(id, values, pluralize) || id : children
   }
 }
 
