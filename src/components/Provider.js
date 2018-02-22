@@ -17,15 +17,6 @@ class InternationalizationProvider extends Component {
     translate: PropTypes.func
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      translations: {},
-      language: props.defaultLanguage
-    }
-  }
-
   getChildContext() {
     return {
       translate: internationalize.translate
@@ -54,7 +45,10 @@ class InternationalizationProvider extends Component {
         internationalize.setTranslations(language, translations)
       }
     } catch (error) {
-      console.error('Translations setting error: ', error)
+      console.error(
+        'react-internationalization: translations setting error ',
+        error
+      )
     }
   }
 
