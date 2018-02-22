@@ -1,10 +1,14 @@
 {
   "name": "react-internationalization",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "keywords": [
     "internationalization",
+    "translate",
     "translation",
+    "locale",
     "localization",
+    "pluralize",
+    "pluralization",
     "react",
     "reactjs"
   ],
