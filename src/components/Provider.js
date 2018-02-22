@@ -45,6 +45,8 @@ class InternationalizationProvider extends Component {
         internationalize.setTranslations(language, translations)
       }
     } catch (error) {
+      internationalize.setTranslations(language, {})
+
       console.error(
         'react-internationalization: translations setting error ',
         error

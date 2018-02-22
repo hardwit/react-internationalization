@@ -8,37 +8,35 @@ class Internationalize {
   language = navigator.language
 
   translate = (key, values, pluralizeValues) => {
-    try {
-      if (!key) {
-        return ''
-      }
+    if (!key) {
+      return ''
+    }
 
-      const keys = key ? key.split('.') : ['']
+    const keys = key ? key.split('.') : ['']
 
-      const res = keys.reduce(
-        (res, key) => (res = res[key] || ''),
-        internationalize.getTranslations()
+    const res = keys.reduce(
+      (res, key) => (res = res[key] || ''),
+      internationalize.getTranslations()
+    )
+
+    if (typeof res !== 'string') {
+      console.error(
+        `react-internationalization: Translation "${key}" must be a string`
       )
 
-      if (typeof res !== 'string') {
-        console.error(
-          `react-internationalization: Translation "${key}" must be a string`
-        )
-
-        return key
-      } else {
-        return this.parseValue(
-          pluralize(
-            this.pluralizationRules,
-            this.language,
-            res,
-            pluralizeValues,
-            this.language
-          ),
-          values
-        )
-      }
-    } catch (error) {}
+      return key
+    } else {
+      return this.parseValue(
+        pluralize(
+          this.pluralizationRules,
+          this.language,
+          res,
+          pluralizeValues,
+          this.language
+        ),
+        values
+      )
+    }
   }
 
   parseValue = (str, definedValues = {}) => {
@@ -78,31 +76,23 @@ class Internationalize {
   }
 
   addLanguageChangeListener = callback => {
-    try {
-      this.languageChangeListeners.push(callback)
+    this.languageChangeListeners.push(callback)
 
-      return () =>
-        this.languageSettingListeners.splice(
-          this.languageSettingListeners.indexOf(callback),
-          1
-        )
-    } catch (error) {
-      console.error('react-internationalization: ', error)
-    }
+    return () =>
+      this.languageSettingListeners.splice(
+        this.languageSettingListeners.indexOf(callback),
+        1
+      )
   }
 
   addLanguageSettingListener = callback => {
-    try {
-      this.languageSettingListeners.push(callback)
+    this.languageSettingListeners.push(callback)
 
-      return () =>
-        this.languageSettingListeners.splice(
-          this.languageSettingListeners.indexOf(callback),
-          1
-        )
-    } catch (error) {
-      console.error('react-internationalization: ', error)
-    }
+    return () =>
+      this.languageSettingListeners.splice(
+        this.languageSettingListeners.indexOf(callback),
+        1
+      )
   }
 
   setLanguage = language => {
